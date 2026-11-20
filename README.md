@@ -140,7 +140,22 @@ anti-defensive-writing/
 - 写 rebuttal、模拟审稿前的自查
 - 中文技术方案、SOP、报告去冗余与去说教
 
-## 许可与致谢
+## 致谢 / Acknowledgements
 
-MIT。规则与文档来自上述两个 MIT 项目，合并打包由本插件完成；原始版权声明见 [LICENSE](LICENSE)。
+本插件的全部写作规则都来自下面两个优秀的开源项目。没有它们，就没有这个合并版：
+
+- **[Kiterlin/anti-defensive-writing](https://github.com/Kiterlin/anti-defensive-writing)** — 作者 **Kiterlin**。
+  提供了操作层的核心方法：必要限定的判据、逐句检查清单、五步改写流程、技术方案与 SOP 写法、
+  推荐与避免句式、指标与不利结果处理、中英文表达差异，以及“示例只供写法不供事实”的边界。
+- **[Adkid-Zephyr/anti-defensive-writing-Skill](https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill)** —
+  作者 **Adkid-Zephyr**。提供了战略层的核心方法：把论文当作学术发布会的叙事原则、
+  “打不过的维度不设为比赛”、“不占优的结果不说输”、实验的论证职责、摘要与结论的结构规则、
+  处理不理想材料的七级优先级，以及“不给审稿人递刀子”的交稿自查。
+
+感谢两位作者把这些经验整理成可复用的规则，并以 MIT 协议开放出来。
+如果你觉得这个合并版有用，也请去给原仓库点一个 Star。
+
+## 许可
+
+MIT。规则与文档来自上述两个 MIT 项目；原始版权声明见 [LICENSE](LICENSE)。
 隐私说明见 [PRIVACY.md](PRIVACY.md)。

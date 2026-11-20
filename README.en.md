@@ -141,7 +141,29 @@ anti-defensive-writing/
 - Pre-rebuttal self-check and reviewer simulation
 - Removing redundancy and admonitory tone from Chinese technical plans, SOPs, and reports
 
-## License and attribution
+## Acknowledgements
+
+Every writing rule in this plugin comes from two excellent open-source projects.
+Without them, this merged version would not exist:
+
+- **[Kiterlin/anti-defensive-writing](https://github.com/Kiterlin/anti-defensive-writing)** by
+  **Kiterlin** — the operating layer: the test for a necessary limitation, the
+  sentence-level checklist, the five-step rewrite procedure, technical-plan and
+  SOP rules, preferred and discouraged patterns, metrics and unfavorable-result
+  handling, Chinese/English phrasing differences, and the boundary that examples
+  supply phrasing but not facts.
+- **[Adkid-Zephyr/anti-defensive-writing-Skill](https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill)** by
+  **Adkid-Zephyr** — the strategic layer: the press-conference narrative
+  principle, “never set a contest you cannot win,” “never say you lost,” the
+  argumentative duty of every experiment, abstract and conclusion structure,
+  the seven-step priority for unfavorable material, and the “don’t hand the
+  reviewer a knife” pre-submission checklist.
+
+Thank you both for distilling this experience into reusable rules and releasing
+them under MIT. If this merged plugin helps you, please give the original
+repositories a star.
+
+## License
 
 MIT. The rules and documentation come from the two MIT projects above; the merged
 packaging is this plugin’s. See [LICENSE](LICENSE) for the original copyright

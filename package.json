@@ -25,6 +25,25 @@
   "engines": {
     "node": ">=20"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainwillchange/dsh-anti-defensive-writing.git"
+  },
+  "homepage": "https://github.com/rainwillchange/dsh-anti-defensive-writing#readme",
+  "bugs": {
+    "url": "https://github.com/rainwillchange/dsh-anti-defensive-writing/issues"
+  },
+  "author": "rainwillchange",
+  "contributors": [
+    {
+      "name": "Kiterlin",
+      "url": "https://github.com/Kiterlin"
+    },
+    {
+      "name": "Adkid-Zephyr",
+      "url": "https://github.com/Adkid-Zephyr"
+    }
+  ],
   "dsh": {
     "manifestVersion": 1,
     "bundle": {

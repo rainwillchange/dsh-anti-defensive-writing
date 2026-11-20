@@ -19,7 +19,7 @@
 
 ## 安装
 
-### 方式一：作为 dsh 插件（推荐）
+### 方式一：作为 dsh 插件（可进插件市场、可按 profile 开关）
 
 插件是纯 ESM、无构建、无第三方运行时依赖。把本目录作为本地包安装到目标 profile：
 
@@ -34,11 +34,19 @@ dsh plugin --profile <profile> add "link:<本目录的绝对路径>"
 安装后重启 `dsh --profile <profile>`（或等待 HMR 重载）。插件通过 `cordis.patch.yml` 把
 `anti-defensive-writing` 插入 profile 的加载树，并在 `ctx.skills` 上注册两个技能。
 
+> ⚠️ **插件方式只在当前 profile 生效。** 它会被写进该 profile 的
+> `package.json → dsh.profile.bundles` 和该 profile 自己的 `node_modules`。新建或切换
+> profile 后需要重新安装一次；若希望所有 profile 通用，请用方式二
+> （`install.ps1` 默认就装到 `~/.dsh/skills`）。
+
 > **DSH Desktop 用户：** 桌面版通常没有把 `dsh` 命令加入 PATH，profile
 > （`~/.dsh/profiles/desktop`）也由桌面壳管理。请优先用下面的“方式二”，或在桌面版
 > “插件”页选择本地目录安装；若要用命令行装进 desktop profile，需先完全退出桌面版。
 
-### 方式二：复制技能文件夹（所有宿主通用）
+### 方式二：复制技能文件夹（跨 profile / 跨宿主最省事，推荐）
+
+复制方式写入的是**用户级技能根**，不依赖任何 profile，也不需要 `dsh` 命令或重启插件系统：
+dsh 的所有 profile 都会扫描它，`~/.agents/skills` 还能同时被 Claude Code、Codex 等兼容宿主使用。
 
 dsh 的 `@deepseek-ai/dsh-skill-filesystem` 会扫描这些目录：
 
@@ -139,6 +147,14 @@ anti-defensive-writing/
 - 组织实验章节（每个实验该承担什么职责）
 - 写 rebuttal、模拟审稿前的自查
 - 中文技术方案、SOP、报告去冗余与去说教
+
+## 版本与发布
+
+- 当前版本：**v1.0.0**。
+- 技能内容或插件行为有实质变化时，同步提升 `package.json` 的 `version`，并打对应的
+  `vX.Y.Z` tag；只改 README / 注释时不必升版本。
+- 支持 git 规格的宿主可以按 tag 锁版本，例如
+  `github:rainwillchange/dsh-anti-defensive-writing#v1.0.0`。
 
 ## 致谢 / Acknowledgements
 

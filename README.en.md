@@ -20,7 +20,7 @@ The merged skill is not a concatenation. The narrative rules decide *what* to wr
 
 ## Install
 
-### Option 1 — install as a dsh plugin (recommended)
+### Option 1 — install as a dsh plugin (market listing, per-profile switch)
 
 The plugin is pure ESM with no build step and no third-party runtime dependencies. Install this folder as a local package into a target profile:
 
@@ -36,12 +36,22 @@ Restart `dsh --profile <profile>` (or wait for HMR). `cordis.patch.yml` inserts 
 `anti-defensive-writing` entry into the profile’s loader tree, and the entry
 registers both skills on `ctx.skills`.
 
+> ⚠️ **A plugin install applies to that profile only.** It is recorded in that
+> profile’s `package.json → dsh.profile.bundles` and its own `node_modules`.
+> After creating or switching to another profile, install it again there; for a
+> setup shared by every profile, use Option 2 (`install.ps1` writes to
+> `~/.dsh/skills` by default).
+
 > **DSH Desktop users:** the desktop app usually does not put `dsh` on PATH, and it
 > owns its profile (`~/.dsh/profiles/desktop`). Use Option 2, or install this folder
 > as a local source from the desktop Plugins page; to install into the desktop
 > profile from a terminal, quit the desktop app completely first.
 
-### Option 2 — copy the skill folders (works in every host)
+### Option 2 — copy the skill folders (easiest across profiles and hosts)
+
+The copy route writes to a **user-level skill root**, independent of any profile and
+without the `dsh` CLI or a plugin restart: every dsh profile scans it, and
+`~/.agents/skills` is also shared with compatible hosts such as Claude Code and Codex.
 
 dsh’s `@deepseek-ai/dsh-skill-filesystem` scans these roots:
 
@@ -140,6 +150,15 @@ anti-defensive-writing/
 - Organizing the experiments section
 - Pre-rebuttal self-check and reviewer simulation
 - Removing redundancy and admonitory tone from Chinese technical plans, SOPs, and reports
+
+## Versioning
+
+- Current version: **v1.0.0**.
+- When the skill content or plugin behavior changes substantively, bump
+  `package.json` `version` and tag the matching `vX.Y.Z`; README- or
+  comment-only edits do not need a version bump.
+- Hosts that support git specs can pin a tag, for example
+  `github:rainwillchange/dsh-anti-defensive-writing#v1.0.0`.
 
 ## Acknowledgements
 

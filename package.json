@@ -1,0 +1,47 @@
+{
+  "name": "anti-defensive-writing",
+  "version": "1.0.0",
+  "description": "反防御性写作 · Anti-Defensive Writing — 学术发布会原则 + 直接推进主张。合并 Kiterlin/anti-defensive-writing 与 Adkid-Zephyr/anti-defensive-writing-Skill 两套规则，提供中英文两个 dsh 技能。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./skills/*": "./skills/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "skills",
+    "prompts",
+    "README.md",
+    "README.en.md",
+    "PRIVACY.md",
+    "LICENSE",
+    "install.ps1",
+    "install.sh"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "skill",
+    "anti-defensive-writing",
+    "academic-writing",
+    "paper-writing",
+    "rebuttal",
+    "chinese",
+    "english"
+  ],
+  "license": "MIT"
+}

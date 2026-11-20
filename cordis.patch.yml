@@ -1,0 +1,10 @@
+# Anti-Defensive Writing — dsh bundle layer.
+#
+# Mounted when the profile's package.json lists anti-defensive-writing in
+# dsh.profile.bundles (`dsh plugin --profile <name> add anti-defensive-writing`).
+# The entry resolves `anti-defensive-writing` from the profile's node_modules to
+# this package's `exports["."]` (lib/index.js), which registers the two bundled
+# skills on `ctx.skills`.
+- insert:
+    - id: anti-defensive-writing
+      name: anti-defensive-writing
